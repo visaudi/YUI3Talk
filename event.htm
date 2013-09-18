@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<title>Element Free For All</title>
+
+<style type="text/css">
+
+
+.touchOfColor
+{
+background-color:hotpink;
+color:silver;
+text-transform:capitalize;
+}
+
+
+</style>
+
+<div id="theKingdom">
+
+    <p>The King of the free world and his many powers</p>
+
+</div>
+
+<div id="thePillowFortLands">
+
+    <ul>
+        <li>Quicksand trap</li>
+        <li><strong>Deadly</strong> Crockodile Pit</li>
+        <li id="secretTrap">A caviar stand</li>
+
+<script src="http://yui.yahooapis.com/3.12.0/build/yui/yui-min.js">
+</script>
+
+<script>
+YUI().use('node', 'event', 'selector-css3', function (Y) {
+
+    var theKingdom = Y.one('#theKingdom');
+
+    theKingdom.setStyle('backgroundColor', 'lightskyblue');
+
+    theKingdom.on('click', function (ev) {
+
+        theKingdom.setStyle('backgroundColor', 'mediumslateblue');
+
+    });
+
+    Y.one('body').on('click', function (ev) {
+        ev.target.toggleClass('touchOfColor');
+    });
+
+    Y.one('#secretTrap').previous().setStyle('backgroundColor', 'tomato');
+
+    Y.one('strong').ancestor().ancestor().setStyle('backgroundColor', 'mediumvioletred');
+
+});
+
+</script>
